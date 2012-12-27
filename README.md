@@ -1,4 +1,4 @@
-# Seatbelt Profiles # 
+# Seatbelt Profiles
 
 
 ## Description ##
@@ -10,9 +10,7 @@ My hopes are that people will start to make their own by maybe forking this repo
 
 ## Basic Usage ##
 
-To get things rolling immediately you should just be able to run the corresponding shell scripts. I have taken care to make them portable. Dropping to a terminal (for example) and running:
-     $ ./safari.sh 
-should fire up a "fresh" Safari. 
+To get things rolling immediately you should just be able to run the corresponding shell scripts. I have taken care to make them portable. Dropping to a terminal (for example) and running: `./safari.sh` should fire up a "fresh" Safari. 
 To learn more about the sandbox profile syntax you can't easily [google for them](http://www.google.com/search?q=version+1+filetype:sb). You can however learn a bit by looking at the ones that ship with OS X by default by dropping to a terminal and
 looking in `/usr/share/sandbox`, `/System/Library/Sandbox/Profiles`, or `/Library/Sandbox/Profiles`:
 
@@ -26,7 +24,6 @@ looking in `/usr/share/sandbox`, `/System/Library/Sandbox/Profiles`, or `/Librar
      kadmind.sb                   preview.sb                   xgridcontrollerd.sb
      krb5kdc.sb                   quicklookd-job-creation.sb
      mDNSResponder.sb             quicklookd.sb
-     stephens-computer:sandbox s7$
 
 You can also glean a bit more by checking the manpages for `sandbox-exec(1)`, `sandbox_init(3)`, `sandbox(7)`, and `sandboxd(8)`.
 
