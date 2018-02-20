@@ -1,6 +1,36 @@
+;; -*- Mode: Scheme; tab-width: 4 -*-
+
 (version 1)
 (debug allow)
 
 (import "bsd.sb")
 ;; TBD
 (deny default)
+(allow signal)
+(allow ipc-posix-shm)
+(allow process*)
+(allow mach-lookup)
+(allow file-read*
+    (regex
+        #"^/Users/[^.]+/$"
+        #"^/Users/[^.]+/Library"
+        #"^/Users/[^.]+/Public"
+        #"^/Applications/Mail.app"
+        #"^/Library/*"
+        #"^/System/Library/*"
+        #"^/usr/lib/*"
+        #"^/usr/share/*"
+        #"^/private/*"
+        #"^/dev/*"
+    )   
+)
+
+(allow file-read-data file-write* file-read-metadata
+  (regex 
+    #"^/Users/[^.]+/Library/Application Support/Mail"
+    #"^/Users/[^.]+/Library/Mail"
+    #"^/Users/[^.]+/Library/Keychains"
+    #"^/Users/[^.]+/Library/Logs/Sync/syncservices.log"
+    #"^/Users/[^.]+/Library/Application Support/SyncServices/Local/clientdata"
+  )
+)
